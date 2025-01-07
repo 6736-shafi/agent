@@ -168,7 +168,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 web_search_agent = Agent(
     name="Web Search Agent",
     role="Search the web for information",
-    model=Groq(id="llama3-groq-8b-8192-tool-use-preview"),
+    model=Groq(id="llama-3.2-3b-preview"),
     tools=[DuckDuckGo()],
     instructions=["Always include sources"],
     show_tools_calls=False,
@@ -179,7 +179,7 @@ web_search_agent = Agent(
 finance_agent = Agent(
     name="Finance AI Agent",
     role="Search the web for financial information",
-    model=Groq(id="llama3-groq-8b-8192-tool-use-preview"),
+    model=Groq(id="llama-3.2-3b-preview"),
     tools=[
         YFinanceTools(
             stock_price=True, 
@@ -196,7 +196,7 @@ finance_agent = Agent(
 # Multi-agent system that combines both agents
 multi_ai_agent = Agent(
     team=[web_search_agent, finance_agent],
-    model=Groq(id="llama3-groq-8b-8192-tool-use-preview"),
+    model=Groq(id="llama-3.2-3b-preview"),
     instructions=["Always include sources", "Focus on concise responses"],
     show_tools_calls=False,
     markdown=True,
