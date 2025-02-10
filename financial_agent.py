@@ -203,7 +203,7 @@ multi_ai_agent = Agent(
 )
 
 # Streamlit UI
-st.title("AI Financial Analysis & Web Search")
+st.title("AI Agent for Financial Analysis & Web Search")
 
 st.header("Request Financial Analysis or Latest News")
 query = st.text_input("Enter your query:")
